@@ -47,15 +47,39 @@ function Input({text, onChangeText}) {
     </View>
   )
 }
-
+ 
+ 
 function Calcular({text, onChangeResult}) {
-  const valores: string[] = text.split('+');
-  const resultado: number = Number(valores[0]) + Number(valores[1]);
-
+  const valores: string[] = text.split('-');
+  const resultado: number = Number(valores[0]) - Number(valores[1]);
+  
+  const valoresmais: string[] = text.split('+');
+  const resultadomais: number = Number(valoresmais[0]) + Number(valoresmais[1]);
   if (resultado) {
     onChangeResult(resultado);
+  }else if (resultadomais){
+    onChangeResult(resultadomais);
+  } 
+
+  const valoresvezes: string[] = text.split('*');
+  const resultadovezes: number = Number(valoresvezes[0]) * Number(valoresvezes[1]);
+  if (resultado) {
+    onChangeResult(resultado);
+  }else if (resultadovezes){
+    onChangeResult(resultadovezes);
   }
+
+  const valoresdividido: string[] = text.split('/');
+  const resultadodividido: number = Number(valoresdividido[0]) / Number(valoresdividido[1]);
+  if (resultado) {
+    onChangeResult(resultado);
+  }else if (resultadodividido){
+    onChangeResult(resultadodividido);
+  } 
+
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
